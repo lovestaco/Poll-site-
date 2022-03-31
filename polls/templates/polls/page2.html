@@ -1,0 +1,52 @@
+<html>
+{% load static %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'page2.js' %}" type="text/javascript"></script>
+
+<title>Page 2</title>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'page2.css' %}">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+</head>
+
+<body onload="myFunction({{detail.id}})">
+
+    <h1 class="fly">FlyweightPolls</h1>
+    {% block content %}
+    <h1 id="questiontodisp">
+        <div id="question">{{detail.Question}}</div>
+    </h1>
+    <a href="/polls/page3/{{detail.id}}"><button class="button">Vote on this poll</button></a>
+<div class="container">
+        <div class="fixed">
+    <table id="polltable" border="1px"  style="border-collapse:collapse;">
+        <tr>
+            <th> Numbers</th>
+            <th> Option </th>
+            <th> Votes</th>
+        <tr></tr>
+        {% for op,val in detail.OptionVote.items %}
+        <th>{{forloop.counter}}</th>
+        <th>{{op }}</th>
+        <th>{{val}}</th>
+        <tr></tr>
+        {%endfor%}
+        </tr>
+    </table>
+        </div>
+    <div id='dispoptionvote'></div>
+<div class="flex-item">
+    <h1>Pie Chart Representation:</h1>
+
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    {% endblock %}
+</div>
+</div>
+</body>
+
+</html>

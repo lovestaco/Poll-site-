@@ -1,0 +1,33 @@
+<html>
+{% load static %}
+
+<title>page3</title>
+<h2>
+    VoteOnThisPoll
+</h2>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'page3.js' %}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'page3.css' %}">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<body>
+    {% block content %}
+    <h1 class="fly">FlyWeight Polls</h1>
+    <h2>{{detail.Question}}</h2>
+
+    <form action="#" method="post" class="voteForm" id="voteForm">
+        {% for op in detail.OptionVote %}
+        <input type="radio" id="radivote" name="radivote" style="font-size:15px;" value={{op}}>
+        <lable>{{op}}</lable>
+        </lable><br><br>
+        <tr></tr>
+        {%endfor%}
+        <meta id="my_playlist_data" data-playlist="{{ detail }}">
+        </div>
+        <button style="font-size:20px;" onclick="myFun({{detail}})" type="button">Vote</button>
+        {% endblock %}
+    </form>
+</body>
+
+</html>

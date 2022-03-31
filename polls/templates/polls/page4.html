@@ -1,0 +1,46 @@
+<html>
+{% load static %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="{% static 'page4.js' %}" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'page4.css' %}">
+<title>
+    page 4
+</title>
+
+<body>
+    <h2 class="one">
+        CreatePoll
+    </h2>
+    <h1 class="two">
+        FlyWeightPolls
+    </h1>
+    <div class="three">
+        <h1>
+            Question
+        </h1>
+        <input type="text" id="questionname" size="80px" value="enter the question"><br><br>
+        <h1>
+            Answer Options
+        </h1>
+
+        <div id="optiondiv">
+
+            <input type="text" class="optionclass" value="enter option" size="80px"><br><br>
+
+        </div>
+
+        <button class="button" onclick=ad()>Add Options</button><br>
+
+        <h1>
+            Comma Seperated Tags
+        </h1>
+        <input type="text" name="3" id="tag" value="enter tags " size="80px"><br>
+        <button class="button" onclick="myFunction()">CreatePoll</button>
+
+    </div>
+
+</body>
+
+</html>
